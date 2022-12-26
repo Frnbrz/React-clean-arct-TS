@@ -1,23 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { NoteInfo } from '../../models';
-import { clearLocalStorage, persistLocalStorage } from '../../utilities';
 
 export const EmptyUserState: NoteInfo = {
-  id: 0,
-  content: '',
-  date: '',
-  important: false,
+  notes: [],
 };
 
-export const UserKey = 'user';
-
 export const notesSlice = createSlice({
-  name: 'user',
-  initialState: localStorage.getItem('user')
-    ? JSON.parse(localStorage.getItem('user') as string)
-    : EmptyUserState,
+  name: 'notes',
+  initialState: EmptyUserState,
   reducers: {
-    getNotes: (state, action) => {
+    fetchNotes: (state, action) => {
       return action.payload;
     },
     createNote: (state, action) => {
@@ -31,7 +23,6 @@ export const notesSlice = createSlice({
   },
 });
 
-export const { getNotes, createNote, updateNote, resetNotes } =
-  notesSlice.actions;
+export const { fetchNotes, createNote, updateNote } = notesSlice.actions;
 
 export default notesSlice.reducer;

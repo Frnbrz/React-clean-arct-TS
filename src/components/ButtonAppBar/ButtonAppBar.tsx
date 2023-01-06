@@ -41,7 +41,7 @@ export default function ButtonAppBar() {
           </Typography>
           {userState.name ? (
             <Button color='inherit' onClick={logOut}>
-              Login
+              Logout
             </Button>
           ) : null}
         </Toolbar>

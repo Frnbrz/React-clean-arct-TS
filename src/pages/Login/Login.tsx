@@ -1,3 +1,7 @@
+import { PrivateRoutes, PublicRoutes, Roles } from '@/models'
+import { createUser, resetUser, UserKey } from '@/redux/states/user'
+import { getMorty } from '@/services'
+import { clearLocalStorage } from '@/utilities'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import { Paper } from '@mui/material'
 import Avatar from '@mui/material/Avatar'
@@ -14,10 +18,6 @@ import * as React from 'react'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { PrivateRoutes, PublicRoutes, Roles } from '../../models'
-import { createUser, resetUser, UserKey } from '../../redux/states/user'
-import { getMorty } from '../../services'
-import { clearLocalStorage } from '../../utilities'
 
 const theme = createTheme()
 

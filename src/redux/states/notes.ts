@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { NoteInfo } from '../../models'
+import { NoteInfo } from '@/models'
 
 export const EmptyUserState: NoteInfo = {
   notes: [],

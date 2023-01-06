@@ -1,13 +1,13 @@
+import '@/App.css'
+import { ButtonAppBar } from '@/components/ButtonAppBar'
+import { AuthGuard, RoleGuard } from '@/guards'
+import { PrivateRoutes, PublicRoutes, Roles } from '@/models'
+import { Dashboard } from '@/pages/Private'
+import store from '@/redux/store'
+import { RoutesWithNotFound } from '@/utilities'
 import { lazy, Suspense } from 'react'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Navigate, Route } from 'react-router-dom'
-import './App.css'
-import { ButtonAppBar } from './components/ButtonAppBar'
-import { AuthGuard, RoleGuard } from './guards'
-import { PrivateRoutes, PublicRoutes, Roles } from './models'
-import { Dashboard } from './pages/Private'
-import store from './redux/store'
-import { RoutesWithNotFound } from './utilities'
 
 const Login = lazy(() => import('./pages/Login/Login'))
 const Private = lazy(() => import('./pages/Private/Private'))

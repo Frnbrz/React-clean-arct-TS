@@ -1,3 +1,7 @@
+import { PublicRoutes } from '@/models'
+import { resetUser, UserKey } from '@/redux/states/user'
+import { AppStore } from '@/redux/store'
+import { clearLocalStorage } from '@/utilities'
 import MenuIcon from '@mui/icons-material/Menu'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
@@ -5,13 +9,8 @@ import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { PublicRoutes } from '../../models'
-import { resetUser, UserKey } from '../../redux/states/user'
-import { AppStore } from '../../redux/store'
-import { clearLocalStorage } from '../../utilities'
 
 export default function ButtonAppBar() {
   const navigate = useNavigate()

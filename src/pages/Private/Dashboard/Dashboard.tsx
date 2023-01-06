@@ -1,10 +1,9 @@
+import { fetchNotes } from '@/redux/states/notes'
+import { AppStore } from '@/redux/store'
+import { getNotes } from '@/services'
 import { Box, Typography } from '@mui/material'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Note } from '../../../models'
-import { fetchNotes } from '../../../redux/states/notes'
-import { AppStore } from '../../../redux/store'
-import { getNotes } from '../../../services'
 
 function Dashboard() {
   const dispatch = useDispatch()
@@ -20,7 +19,6 @@ function Dashboard() {
     getNotesFromApi()
   }, [])
 
-  console.log(notesState)
 
   return (
     <Box>

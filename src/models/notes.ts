@@ -6,5 +6,5 @@ export interface Note {
 }
 
 export interface NoteInfo {
-  notes: Note[];
+  notes: Array<Note>;
 }

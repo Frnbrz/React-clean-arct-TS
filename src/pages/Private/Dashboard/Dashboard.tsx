@@ -25,11 +25,9 @@ function Dashboard() {
   return (
     <Box>
       <Typography variant='h1'>Dashboard</Typography>
-      {notesState
-        ? notesState?.map((note: Note) => (
-            <Typography key={note.id}>{note.content}</Typography>
-          ))
-        : null}
+      {/* {notesState.notes.map((note: Note) => {
+        return <Typography variant='h3'>{note.content}</Typography>;
+      })} */}
     </Box>
   );
 }

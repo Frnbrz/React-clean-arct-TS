@@ -6,6 +6,12 @@
   width: 100%;
 }
 
+.App {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 2rem;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

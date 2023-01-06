@@ -1,51 +1,51 @@
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { Paper } from '@mui/material';
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import * as React from 'react';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { PrivateRoutes, PublicRoutes, Roles } from '../../models';
-import { createUser, resetUser, UserKey } from '../../redux/states/user';
-import { getMorty } from '../../services';
-import { clearLocalStorage } from '../../utilities';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
+import { Paper } from '@mui/material'
+import Avatar from '@mui/material/Avatar'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Container from '@mui/material/Container'
+import CssBaseline from '@mui/material/CssBaseline'
+import Grid from '@mui/material/Grid'
+import Link from '@mui/material/Link'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import TextField from '@mui/material/TextField'
+import Typography from '@mui/material/Typography'
+import * as React from 'react'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { PrivateRoutes, PublicRoutes, Roles } from '../../models'
+import { createUser, resetUser, UserKey } from '../../redux/states/user'
+import { getMorty } from '../../services'
+import { clearLocalStorage } from '../../utilities'
 
-const theme = createTheme();
+const theme = createTheme()
 
 export default function SignIn() {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   useEffect(() => {
-    clearLocalStorage(UserKey);
-    dispatch(resetUser());
-    navigate(`/${PublicRoutes.LOGIN}`, { replace: true });
-  }, []);
+    clearLocalStorage(UserKey)
+    dispatch(resetUser())
+    navigate(`/${PublicRoutes.LOGIN}`, { replace: true })
+  }, [])
 
   const login = async () => {
     try {
-      const result = await getMorty();
-      dispatch(createUser({ ...result, rol: Roles.USER }));
-      navigate(`/${PrivateRoutes.PRIVATE}`, { replace: true });
-    } catch (error) {}
-  };
+      const result = await getMorty()
+      dispatch(createUser({ ...result, rol: Roles.USER }))
+      navigate(`/${PrivateRoutes.PRIVATE}`, { replace: true })
+    } catch (error) { }
+  }
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    event.preventDefault()
+    const data = new FormData(event.currentTarget)
     console.log({
       email: data.get('email'),
       password: data.get('password'),
-    });
-  };
+    })
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -125,5 +125,5 @@ export default function SignIn() {
         </Container>
       </Box>
     </ThemeProvider>
-  );
+  )
 }

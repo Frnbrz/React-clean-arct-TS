@@ -1,28 +1,28 @@
-import MenuIcon from '@mui/icons-material/Menu';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { PublicRoutes } from '../../models';
-import { resetUser, UserKey } from '../../redux/states/user';
-import { AppStore } from '../../redux/store';
-import { clearLocalStorage } from '../../utilities';
+import MenuIcon from '@mui/icons-material/Menu'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import IconButton from '@mui/material/IconButton'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { PublicRoutes } from '../../models'
+import { resetUser, UserKey } from '../../redux/states/user'
+import { AppStore } from '../../redux/store'
+import { clearLocalStorage } from '../../utilities'
 
 export default function ButtonAppBar() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const userState = useSelector((store: AppStore) => store.user);
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const userState = useSelector((store: AppStore) => store.user)
 
   const logOut = () => {
-    clearLocalStorage(UserKey);
-    dispatch(resetUser());
-    navigate(PublicRoutes.LOGIN, { replace: true });
-  };
+    clearLocalStorage(UserKey)
+    dispatch(resetUser())
+    navigate(PublicRoutes.LOGIN, { replace: true })
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
@@ -47,5 +47,5 @@ export default function ButtonAppBar() {
         </Toolbar>
       </AppBar>
     </Box>
-  );
+  )
 }

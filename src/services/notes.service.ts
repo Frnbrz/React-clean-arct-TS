@@ -7,6 +7,10 @@ export const getNotes = () => {
   return axios.get(noteUrl)
 }
 
+export const getNotesError = () => {
+  return axios.get(noteUrl + 'error')
+}
+
 export const getNote = (noteId: number) => {
   return axios.get(noteUrl + noteId)
 }

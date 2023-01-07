@@ -6,4 +6,6 @@ export const PrivateRoutes = {
   PRIVATE: 'private',
   DASHBOARD: 'Dashboard',
   HOME: 'Home',
+  TEST: 'Test',
+  TESTASYNC: 'TestAsync',
 }

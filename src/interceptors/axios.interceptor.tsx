@@ -20,8 +20,8 @@ export const AxiosInterceptor = () => {
 
   axios.interceptors.response.use(
     (response) => {
-      console.log(response)
 
+      if (response.config.method !== 'get') SnackbarUtilities.success("Operación exitosa")
       return response
     },
     (error) => {

@@ -1,5 +1,6 @@
 export const PublicRoutes = {
   LOGIN: 'login',
+  REGISTER: 'register'
 }
 
 export const PrivateRoutes = {
@@ -7,5 +8,5 @@ export const PrivateRoutes = {
   DASHBOARD: 'Dashboard',
   HOME: 'Home',
   TEST: 'Test',
-  TESTASYNC: 'TestAsync',
+  TESTASYNC: 'TestAsync'
 }

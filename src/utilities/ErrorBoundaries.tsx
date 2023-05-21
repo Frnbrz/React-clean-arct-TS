@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 interface Props {
   children: React.ReactNode
@@ -32,7 +32,6 @@ export class ErrorBoundary extends React.Component<Props, State> {
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     return { hasError: true }
   }
-
 
   render() {
     if (this.state.hasError || this.props.error) {

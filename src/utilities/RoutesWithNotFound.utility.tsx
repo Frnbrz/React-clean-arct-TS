@@ -9,12 +9,13 @@ function RoutesWithNotFound({ children }: Props) {
     <Routes>
       {children}
       <Route
-        path='*'
-        element={<Box>
-          <Typography variant='h2'>Not Found</Typography>
+        path="*"
+        element={
+          <Box>
+            <Typography variant="h2">Not Found</Typography>
 
-          <Link to={'/'}>Go to home</Link>
-        </Box>
+            <Link to={'/'}>Go to home</Link>
+          </Box>
         }
       />
     </Routes>
